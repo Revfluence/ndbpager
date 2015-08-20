@@ -94,7 +94,7 @@ class Pager(BasePager):
     def _get_max_avail_page(self, page_size):
         # set limit to 5000 results to prevent abuse
         prev_cursor = None
-        for page in xrange(1, 1000 / page_size):
+        for page in xrange(1, 5000 / page_size):
             cursor, more = self._get_from_cache(page)
             if not cursor:
                 res, cursor, more = self._fetch_page(
